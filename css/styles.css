@@ -9,7 +9,6 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: "poppins",sans-serif;
-   
 }
 
 :root{
@@ -21,7 +20,7 @@
 
 html{
     font-size: 62.5%;
-    overflow: hidden;
+    overflow:scroll;
 }
 
 body{
@@ -158,7 +157,7 @@ section{
 
 .home-sci{
     position:absolute;
-    bottom:10rem;
+    bottom:4rem;
     width:170px;
     display:flex;
     justify-content: space-between;
@@ -362,12 +361,40 @@ span{
     padding-left: 2rem;
 }
 
+.education-box .education-content::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:-1.1rem;
+    width:2rem;
+    height:2rem;
+    background: var(--maincolor);
+    border-radius: 50%;
+}
+
 .education-content .content{
     position: relative;
     padding: 1.5rem;
     border: .2rem solid var(--maincolor);
     border-radius: .6rem;
     margin-bottom: 2rem;
+    overflow:hidden;
+}
+
+.education-content .content::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:100%;
+    background:var(--second-bgcolor);
+    z-index:-1;
+    transition: .5s;
+}
+
+.education-content .content:hover::before{
+    width:100%;
 }
 
 .education-content .content .year{
@@ -376,4 +403,111 @@ span{
     padding-bottom: .5rem;
 }
 
+.education-content .content .year i{
+    padding-right: .5rem;
 
+}
+
+.education-content .content h3{
+    font-size:2rem;
+}
+
+.education-content .content h4{
+    font-size: 1.3rem;
+}
+
+.education-content .content p{
+    font-size: 1.2rem;
+    padding-top: .5rem;
+}
+
+
+.skills{
+    background: var(--second-bgcolor);
+    align-items: center;
+}
+
+.certifications{
+    background: var(--bgcolor);
+    align-items: center;
+}
+
+.skills h1,
+.certifications h1{
+    font-size:6rem;
+    text-align: center;
+    padding-top: 10rem;
+}
+
+.contact{
+    min-height: auto;
+    padding-bottom: 7rem;
+    background:var(--second-bgcolor)
+}
+
+.contact form{
+    max-width: 70rem;
+    margin:0 auto;
+    text-align: center;
+}
+
+.contact form .inputbox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .inputbox .inputfield{
+    position: relative;
+    width:49%;
+    margin: .8rem 0;
+}
+
+.contact form .inputbox .inputfield input,
+.contact form .textarea-field textarea{
+      width:100%;
+      height:100%;
+      padding: 1.5rem;
+      font-size: 1.6rem;
+      color:var(--textcolor);
+      background: transparent;
+      border-radius: .6rem;
+      border: .2rem solid var(--maincolor);
+}
+
+.contact form .inputbox .inputfield input::placeholder,
+.contact form .textarea-field textarea::placeholder{
+    color:var(--textcolor);
+}
+
+.contact form .focus{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: red;
+    border-radius: .6rem;
+    z-index: -1;
+    transition: .5s;
+}
+
+.contact form .inputbox .inputfield input:focus~.focus,
+.contact form .inputbox .inputfield input:valid~.focus{
+    width:100%;
+}
+
+.contact form .textarea-field{
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display:flex;
+}
+
+.contact form .textarea-field textarea{
+    resize:none;
+}
+
+.contact form .btn-box.btns .btn{
+    cursor: pointer;
+}
